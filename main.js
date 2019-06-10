@@ -6,7 +6,6 @@ const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3
 
 // Authorization scopes  required by the API.  multiple scopes separated by spaces
 const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
-// https://www.googleapis.com/auth/youtube.readonly
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content')
@@ -36,10 +35,10 @@ function initClient() {
         authorizeButton.onclick = handleAuthClick;
         signoutButton.onclick = handleSignoutClick;
     })
-   
+
 }
 
-// update sign in state changes
+// update UI sign in state changes
 function updateSignInStatus(isSignedIn) {
     if (isSignedIn) {
         // login button not show
@@ -52,7 +51,7 @@ function updateSignInStatus(isSignedIn) {
         authorizeButton.style.display = 'block';
         signoutButton.style.display = 'none';
         content.style.display = 'none';
-        videoContainer.style.display = 'none';        
+        videoContainer.style.display = 'none';
     }
 }
 
@@ -68,5 +67,15 @@ function handleSignoutClick() {
 
 // get channel from api
 function getChannel(channel) {
-    console.log(channel);
+    // console.log(channel);
+    gapi.client.youtube.channels.list({
+        part: 'snippet,contentDetails,statistics',
+        forUsername: channel
+    }).then(response => {
+        console.log(response)
+    })
+        .catch(err => {
+            alert('No channel by that name')
+            console.log(JSON.stringify(err))
+        })
 }
