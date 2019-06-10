@@ -1,11 +1,11 @@
 // Options
-const CLIENT_id = '985928846489-qqtt8udvm139pp0frv28tlecqso5s0b4.apps.googleusercontent.com';
+const CLIENT_ID = '985928846489-qqtt8udvm139pp0frv28tlecqso5s0b4.apps.googleusercontent.com';
 
 // Array of API discovery DOC URL for APIs used 
 const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'];
 
 // Authorization scopes  required by the API.  multiple scopes separated by spaces
-const SCOPES = 'https://www.googleapis.com/youtube.readonly';;
+const SCOPES = 'https://www.googleapis.com/youtube.readonly';
 
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
@@ -26,7 +26,7 @@ function handleClientLoad() {
 function initClient() {
     gapi.client.init({
         discoveryDocs: DISCOVERY_DOCS,
-        clientId: CLIENT_id,
+        clientId: CLIENT_ID,
         scope: SCOPES
     }).then(() => {
         // listen for sign-in state changes
