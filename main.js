@@ -5,8 +5,8 @@ const CLIENT_ID = '985928846489-qqtt8udvm139pp0frv28tlecqso5s0b4.apps.googleuser
 const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'];
 
 // Authorization scopes  required by the API.  multiple scopes separated by spaces
-const SCOPES = 'https://www.googleapis.com/youtube.readonly';
-
+const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+// https://www.googleapis.com/auth/youtube.readonly
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content')
