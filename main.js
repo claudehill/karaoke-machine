@@ -1,18 +1,23 @@
 // Options
-const CLIENT_ID = '985928846489-qqtt8udvm139pp0frv28tlecqso5s0b4.apps.googleusercontent.com';
+const CLIENT_ID = '985928846489-m4hm7ofcvu6pd7tcpjd9nvnmafjvigm8.apps.googleusercontent.com';
+
+//'985928846489-qqtt8udvm139pp0frv28tlecqso5s0b4.apps.googleusercontent.com';
 
 // Array of API discovery DOC URL for APIs used 
 const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'];
 
 // Authorization scopes  required by the API.  multiple scopes separated by spaces
 const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+// const SCOPES = 'https://www.googleapis.com/auth/youtube.force-ssl';
+
+
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
 const content = document.getElementById('content')
 const channelForm = document.getElementById('channel-form')
 const channelInput = document.getElementById('channel-input')
 const videoContainer = document.getElementById('video-container')
-const defaultChannel = 'techguyweb';
+const defaultChannel = 'GoogleDevelopers';
 
 
 // Load auth2 library
@@ -69,8 +74,10 @@ function handleSignoutClick() {
 function getChannel(channel) {
     // console.log(channel);
     gapi.client.youtube.channels.list({
-        part: 'snippet,contentDetails,statistics',
-        forUsername: channel
+        mine: false,
+        // part: 'snippet,contentDetails,statistics',
+        forUsername: 'TraversyMedia',
+        part: 'statistics'
     }).then(response => {
         console.log(response)
     })
