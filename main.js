@@ -17,6 +17,15 @@ const channelInput = document.getElementById('channel-input')
 const videoContainer = document.getElementById('video-container')
 const defaultChannel = 'techguyweb';
 
+// form submit and change channel
+channelForm.addEventListener('submit', e => { 
+    e.preventDefault();
+
+    const channel = channelInput.value;
+
+    getChannel(channel);
+})
+
 
 // Load auth2 library
 function handleClientLoad() {
