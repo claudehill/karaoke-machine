@@ -92,7 +92,7 @@ function getChannel(channel) {
         forUsername: channel
     }).then(response => {
         console.log(response)
-        // get items
+        // get items / stats
         const channel = response.result.items[0];
 
         // output
@@ -100,9 +100,12 @@ function getChannel(channel) {
         <ul class="collection">
             <li class="collection-item"> Title: ${channel.snippet.title} </li>
             <li class="collection-item"> ID: ${channel.id} </li>
-            <li class="collection-item"> Subscribers: ${channel.statistics.subscriberCount} </li>
-            <li class="collection-item"> Views: ${channel.statistics.viewCount} </li>
-            <li class="collection-item"> Videos: ${channel.statistics.videoCount} </li>
+            <li class="collection-item"> Subscribers: ${
+                numberWithCommas(channel.statistics.subscriberCount)} </li>
+            <li class="collection-item"> Views: ${
+                numberWithCommas(channel.statistics.viewCount) } </li>
+            <li class="collection-item"> Videos: ${
+                numberWithCommas(channel.statistics.videoCount)} </li>
         </ul>
         <p> ${channel.snippet.description}</p>
         <hr>
@@ -112,11 +115,54 @@ function getChannel(channel) {
         `;
 
         showChannelData(output);
+
+        // get playlist ID, then videos
+        const playlistId = channel.contentDetails.relatedPlaylists.uploads;
+        requestVideoPlaylist(playlistId);
     })
         .catch(err => {
             alert('No channel by that name')
             console.log(JSON.stringify(err))
         })
 }
+
+// utility - add commas
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function requestVideoPlaylist(playlistId) {
+    const requestOptions = {
+        playlistId,
+        part: 'snippet',
+        maxResults: 10
+    }
+
+    const request = gapi.client.youtube.playlistItems.list(requestOptions);
+
+    request.execute(res => {
+        console.log(res)
+        const playlistItems = res.result.items;
+        if (playlistItems) {
+            let output = '<br><h4 class="center-align">Latest Videos</h4>';
+
+            // loop thru videos, append output
+            playlistItems.forEach(item => {
+                const videoId = item.snippet.resourceId.videoId;
+
+                output += `
+                <div class="col s3">
+                <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                `;
+            });
+            // output video
+            videoContainer.innerHTML = output;
+        } else {
+            videoContainer.innerHTML = 'No Uploaded Videos'
+        }
+    })
+}
+
 
 
