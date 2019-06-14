@@ -58,17 +58,18 @@ h2 > i.material-icons, h2 > i.fa {
 
 
     /* label color */
-    .input-field label {
+    /* .input-field label {
       color: #000;
-    }
+    } */
     /* label focus color */
-    .input-field input[type=text]:focus + label {
-      color: #000;
+    .input-field input[type=text]:focus + label
+    {     
+      color: #000 !important;
     }
     /* label underline focus color */
     .input-field input[type=text]:focus {
-      border-bottom: 1px solid #000;
-      box-shadow: 0 1px 0 0 #000;
+      border-bottom: 1px solid #000 !important;
+      box-shadow: 0 1px 0 0 #000 !important;
     }
     /* valid color */
     .input-field input[type=text].valid {
@@ -84,3 +85,43 @@ h2 > i.material-icons, h2 > i.fa {
     .input-field .prefix.active {
       color: #000;
     }
+
+    /* change colour of filled in check box */
+.checkbox-orange[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid #000;
+    background-color: #000;
+}
+
+ 
+
+
+    /* .input-field input:focus
+    {
+      border-bottom: 1px solid orange !important;
+      box-shadow: 0 1px 0 0 orange !important ;
+    }
+
+    .input-field label.active {
+      color: orange !important;
+    } */
+
+
+    #download-button, .rounded {
+     /* width: 60%; */
+      border-radius: 28px;
+    }
+
+#download-button {
+  width: 40%
+}
+.rounded {
+  width: 60%;
+}
+
+.container-wide {
+  width: 90%;
+  margin: auto;
+}
+
+
