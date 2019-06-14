@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <nav class="grey darken-4" role="navigation">
+  <!-- <nav class="grey darken-4" role="navigation">
     <div class="nav-wrapper container">
       <a href="#!" class="brand-logo">Karaoke Machine <img src="img/iconmonstr-microphone-9-240.png" alt=""> </a>
       <ul class="right hide-on-med-and-down">
@@ -23,22 +23,96 @@
       </ul>
 
     </div>
-  </nav>
+  </nav> -->
 
-
-
+  <div class="container-wrapper">
   <div class="container">
     <div class="section">
-
       <div class="row">
-        <div class="col s6">
-          <h3 class="center text-center">Login</h3>
-          
+        <div class="col s5">
+          <h3 class="center white-text text-center">Login</h3>
+          <div class="row">
+            <form action="" class="col s12">
+              <div class="row">
+                <div class="col s12 input-field">
+                  <i class="fa fa-user-circle prefix"></i>
+                  <input type="text" name="user-id" id="user-id">
+                  <label for="user-id">Username</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 input-field">
+                  <i class="fa fa-key prefix"></i>
+                  <input type="password" name="user-password" id="user-password">
+                  <label for="user-password">Password</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12 center">
+                  <button class="btn-large rounded waves-effect waves-light deep-orange darken-3" type="submit"
+                    name="action">Login
+                    <i class="fa fa-sign-in right"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
         </div>
-        <div class="col s6">
-          <h3 class="center text-center">Register</h3>
+        <div class="col s5 offset-s2">
+          <h3 class="center white-text text-center">Register</h3>
+          <div class="row">
+            <form action="" class="col s12">
+
+              <div class="row">
+                <div class="col s12 input-field">
+                  <i class="fa fa-user-circle prefix"></i>
+                  <input type="text" name="register-id" id="register-id">
+                  <label for="register-id">Select a Username</label>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col s12 input-field">
+                    <i class="fa fa-user-circle prefix"></i>
+                    <input type="email" name="register-email" id="register-email" class="validate">
+                    <label for="register-email">Enter Email Address</label>
+                  </div>
+                </div>
+
+              <div class="row">
+                <div class="col s12 input-field">
+                  <i class="fa fa-key prefix"></i>
+                  <input type="password" name="register-password" id="register-password">
+                  <label for="register-password">Enter a Password</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col s12 input-field">
+                  <i class="fa fa-mobile prefix"></i>
+                  <input type="tel" placeholder="( 000 ) 000-0000" name="register-phone" id="register-phone" class="validate">
+                  <label for="register-phone">Mobile Phone Number</label>
+                </div>
+              </div>
+
+
+              <div class="row">
+                  <div class="col s12 center">
+                      <button class="btn-large rounded waves-effect waves-light deep-orange darken-3"
+                          type="submit" name="action">Register
+                          <i class="fa fa-user-plus right"></i>
+                      </button>
+                  </div>
+              </div>
+
+
+            </form>
+          </div>
+
         </div>
-   
+
       </div>
 
 
@@ -49,6 +123,9 @@
 
   </div>
   <!-- end container -->
+
+</div>
+<!-- end container wrapper -->
 
   <!-- start second parallax image -->
   <!-- <div class="parallax-container valign-wrapper">
@@ -62,44 +139,46 @@
       <div class="parallax"><img src="img/bg2-crowd.jpg" alt="Unsplashed background img 2"></div>
     </div> -->
 
-    <!-- start footer -->
+  <!-- start footer -->
 
-    <footer class="page-footer grey darken-4">  
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Company Bio</h5>
-              <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-    
-    
-            </div>
-            <div class="col l3 s12">
-              <h5 class="white-text">Settings</h5>
-              <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-            <div class="col l3 s12">
-              <h5 class="white-text">Connect</h5>
-              <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-          </div>
+  <footer class="page-footer grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our
+            full time job. Any amount would help support and continue development on this project and is greatly
+            appreciated.</p>
+
+
         </div>
-        <div class="footer-copyright black">
-          <div class="container">
-          Made by <a class="black" href="http://materializecss.com">Materialize</a>
-          </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
         </div>
-      </footer>
-    
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright black">
+      <div class="container">
+        Made by <a class="black" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
 
 
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
