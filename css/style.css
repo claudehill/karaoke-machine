@@ -35,11 +35,12 @@ h2 > i.material-icons, h2 > i.fa {
 
 .parallax-container {
   /* min-height: 380px; */
-  min-height: 500px;
+  min-height: 580px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
   .parallax-container .section {
     width: 100%;
   }
