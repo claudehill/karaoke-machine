@@ -16,7 +16,7 @@ p {
   vertical-align: auto;
 }
 
-h1.leader-text {
+h1.leader-text, .leader-heading {
   font-family: 'Rock Salt', cursive;
   padding-top: 80px;
 }
@@ -66,6 +66,11 @@ footer.page-footer {
   color: #000 !important;
 }
 
+.light input[type=text]:focus+label,
+.light input[type=password]:focus+label  {
+  color: #fff !important;
+}
+
 /* label underline focus color */
 
 .input-field input[type=text]:focus,
@@ -92,6 +97,14 @@ footer.page-footer {
 
 .input-field .prefix.active {
   color: #000;
+}
+
+.input-field .light.active {
+  color: #fff;
+}
+.light
+ {
+  color: orange;
 }
 
 /* change colour of filled in check box */
@@ -134,4 +147,8 @@ footer.page-footer {
   background-repeat: no-repeat;
   background-size: cover;
 
+}
+
+.full-height {
+  min-height: 640px;
 }
