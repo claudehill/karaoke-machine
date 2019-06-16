@@ -152,3 +152,16 @@ footer.page-footer {
 .full-height {
   min-height: 640px;
 }
+
+.song-list, .song-options {
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.song-options a {
+  margin-right: 8px;
+}
+
+span.title {
+  font-weight: bold;
+}
