@@ -61,20 +61,17 @@ footer.page-footer {
 
 /* label focus color */
 
-.input-field input[type=text]:focus+label,
-.input-field input[type=password]:focus+label {
+.input-field input[type=text]:focus+label, .input-field input[type=password]:focus+label {
   color: #000 !important;
 }
 
-.light input[type=text]:focus+label,
-.light input[type=password]:focus+label  {
+.light input[type=text]:focus+label, .light input[type=password]:focus+label {
   color: #fff !important;
 }
 
 /* label underline focus color */
 
-.input-field input[type=text]:focus,
-.input-field input[type=password]:focus {
+.input-field input[type=text]:focus, .input-field input[type=password]:focus {
   border-bottom: 1px solid #000 !important;
   box-shadow: 0 1px 0 0 #000 !important;
 }
@@ -102,8 +99,8 @@ footer.page-footer {
 .input-field .light.active {
   color: #fff;
 }
-.light
- {
+
+.light {
   color: orange;
 }
 
@@ -142,11 +139,10 @@ footer.page-footer {
   margin: auto;
 }
 
-.container-wrapper {
+.container-wrapper .login {
   background-image: url('../img/bg4-mic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .full-height {
@@ -154,14 +150,32 @@ footer.page-footer {
 }
 
 .song-list, .song-options {
-margin-top: 0px;
-margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .song-options a {
+  margin-right: 5px;
+}
+
+.song-options a>i.fa {
   margin-right: 8px;
 }
 
 span.title {
   font-weight: bold;
+}
+
+.page-song-search {
+  background: url('../img/bg5-mic.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#song-search-panel {
+  opacity: 0.7 !important;
+}
+
+.song-list {
+  margin-top: 20px;
 }
