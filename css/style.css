@@ -179,3 +179,11 @@ span.title {
 .song-list {
   margin-top: 20px;
 }
+
+#page-singer-profile {
+  background: url('../img/bg6-mic-fire.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 900px;
+}
